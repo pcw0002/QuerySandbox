@@ -1,6 +1,17 @@
 import useAxiosClient from "../../src/hooks/api.hook"
 import { useQuery, useMutation } from "@tanstack/react-query"
 
+interface User {
+  id: string
+  firstName: string
+  lastName: string
+  age: string
+}
+
+interface MutateUser {
+  data: User
+}
+
 export const useFetchUsers = () => {
   const client = useAxiosClient();
   const queryFunction = async () => {
@@ -14,7 +25,7 @@ export const useFetchUsers = () => {
 
 export const useUpdateUser = () => {
   const client = useAxiosClient()
-  const mutationFunction = async ({ data }) => {
+  const mutationFunction = async ({ data }: MutateUser) => {
     const { data: result } = await client.post(`/api/editUser`, data)
     return result
   }

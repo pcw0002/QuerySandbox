@@ -15,7 +15,13 @@ import {
   FormMessage,
 } from "@/components/ui/ui/form"
 import { Input } from "@/components/ui/ui/input"
-import { Label } from "@/components/ui/ui/label"
+
+interface User {
+  id: string;
+  firstName: string;
+  lastName: string;
+  age: string ;
+}
 
 const formSchema = z.object({
   firstName: z.string().min(2).max(15),
@@ -26,7 +32,7 @@ const formSchema = z.object({
 
 export default function Users() {
   const [edit, setEdit] = useState(false);
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({} as User);
 
   const { data, isLoading } = useFetchUsers();
   const { mutate } = useUpdateUser();
@@ -42,7 +48,7 @@ export default function Users() {
   })
 
 
-  const handleEditCLick = (user) => {
+  const handleEditCLick = (user: User) => {
     console.log(user)
     setUser(user);
     setEdit((prev) => !prev);
@@ -73,7 +79,7 @@ export default function Users() {
             </tr>
           </thead>
           <tbody>
-            {data.map((user) => (
+            {data.map((user: User) => (
               <tr key={user.id}>
                 <td className="border px-4 py-2">{user.firstName }</td>
                 <td className="border px-4 py-2">{user.lastName }</td>
