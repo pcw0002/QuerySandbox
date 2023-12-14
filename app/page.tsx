@@ -7,9 +7,9 @@ export default function Home() {
 
       <div className="mb-32 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:text-left">
         <div className="">
-          <h1 className="text-4xl font-bold mb-4">Hello, I'm First Name</h1>
+          <h1 className="text-4xl font-bold mb-4">Hello, I&apos;m First Name</h1>
           <p className="mb-8">
-            I'm a job title based in location. I specialize in something and
+            I&apos;m a job title based in location. I specialize in something and
             have worked with some brand names.
           </p>
           </div>
