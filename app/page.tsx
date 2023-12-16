@@ -9,8 +9,7 @@ export default function Home() {
         <div className="">
           <h1 className="text-4xl font-bold mb-4">Hello, I&apos;m First Name</h1>
           <p className="mb-8">
-            I&apos;m a job title based in location. I specialize in something and
-            have worked with some brand names.
+            Head on over to the <a href="/users">users</a> page to see a list of users.
           </p>
           </div>
       </div>
